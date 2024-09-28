@@ -113,6 +113,13 @@ apt update
 apt install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 ```
+#### 2.2.4 Install socat and enable ipv4 ip forwarding
+
+```bash
+sudo apt install socat
+sudo sh -c "echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf"
+sudo sysctl -p
+```
 
 ## Step 3: Initialize the Kubernetes Master Node
 
