@@ -340,14 +340,6 @@ On all nodes, run:
 kubeadm reset -f
 ```
 
-Clean up iptables and network interfaces:
-
-```bash
-iptables -F && iptables -t nat -F && iptables -t mangle -F && iptables -X
-ip link delete cni0
-ip link delete flannel.1
-```
-
 ### Step 6.2: Re-initialize the Master
 
 On the master node:
